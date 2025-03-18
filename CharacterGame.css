@@ -1,0 +1,104 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    overflow: clip; /* Prevent body scrolling */
+    font-family: 'OCR A', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), 
+        url(https://images.squarespace-cdn.com/content/v1/636bf9aac2ff2f391948a2de/41f577fc-b16a-4f8f-8fa0-9a204535b984/john-pachkowsky-salt-the-earth-wormwitch-lord-of-chains-iron-bastion-mork-borg-RPG.jpg);
+    background-size: cover; /* Ensures the background image covers the entire page */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-position: top left; /* Centers the image */
+    color: white; /* Adjusts text color for better contrast on dark backgrounds */
+}
+
+header {
+    width: 100%;
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 10; /* Keeps it above other content */
+}
+
+#site-title {
+    margin-left: 30px
+}
+
+#divider {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    padding: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 50px;
+}
+.nagivate-pages a {
+    background-color: none;
+    text-decoration: none;
+    color: white;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.top-content {
+    width: 100%;
+    /* background-color: #ddd; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px; /* Offset below the header */
+    z-index: 5;
+}
+
+#character-pic {
+    height: 80px;
+}
+
+
+.content-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 200px); /* Account for header and top-content height */
+}
+
+.left {
+    width: 50%;
+    /* background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    position: fixed; /* Keeps it static */
+    height: calc(100vh - 140px); /* Adjust for header and top-content height */
+    position: relative;
+    left: 50px;
+}
+
+.main-stats {
+    position: relative;
+    left: 40px;
+}
+
+.right {
+    width: 50%;
+    margin-left: 50%;
+    overflow-y: auto; /* Enable scrolling */
+    /* background-color: #eaeaea; /* Light gray background */
+    padding: 20px;
+    height: calc(100vh - 140px); /* Adjust for header and top-content height */
+    box-sizing: border-box; /* Includes padding in height calculation */
+}
+
+#detail-title {
+    margin-top: 0px;
+}
+
+.detail-content {
+    height: 200vh; /* Simulates long content for scrolling */
+}

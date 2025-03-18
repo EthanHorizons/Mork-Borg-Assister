@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Character Creator</title>
+
+    <link rel="stylesheet" href="CharacterCreator.css">
+
+    <script src="CharacterCreator.js" charset="utf-8" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="site-title">Mork Borg Helper</h1>
+        <h1 id="divider">|</h1>
+        <h2 class="nagivate-pages"><a href="CharacterSelector.html">Character Selector</a></h2>
+    </header>
+    <div class="content-back">
+        <div class="content">
+            <h1 class="content-title">New Character</h1>
+            <div class="content-body-one">
+                <form>
+                    <label class="class-title" for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name" />
+                </form>
+                <form>
+                    <label class="class-title" for="class-form">Class: </label>
+                    <select class="class-title" id="class-form" name="class-form">
+                        <option value="0">Classless</option>
+                        <option value="1">Fanged Deserter</option>
+                        <option value="2">Gutterborn Scum</option>
+                        <option value="3">Esoteric Hermit</option>
+                        <option value="4">Wretched Royalty</option>
+                        <option value="5">Heretical Priest</option>
+                        <option value="6">Occult Herbmaster</option>
+                    </select>
+                </form>
+            </div>
+            <!-- After this is class divs, this would be hidden unless a class is selected -->
+			<!-- Classless -->
+			<div class="chosen-class" id="chosen">
+                <p class="description">
+                    You are your own person, not defined by any of the cruelties in this world, be who you want to be...
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(2d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d2): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d10): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+				<div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item" class="step-3">
+                            <option value="0"></option>
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item" class="step-3">
+                            <option value="0"></option>
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d10): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="0"></option>
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                            <option value="5">5: Warhammer</option>
+                            <option value="6">6: Sword</option>
+                            <option value="7">7: Bow</option>
+                            <option value="8">8: Flail</option>
+                            <option value="9">9: Crossbow</option>
+                            <option value="10">10: Zweih&auml;nder</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d4): </label>
+                        <select id="armor" name="armor">
+                            <option value="0"></option>
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                            <option value="3">3: Medium Armor</option>
+                            <option value="4">4: Heavy Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+			
+            <!--Fanged Class-->
+            <div class="chosen-class hidden">
+                <p class="description">
+                    You have thirty or so friends who never let you down:
+                    YOUR TEETH. Disloyal, deranged or simply uncontrollable,
+                    any group that didnt boot you out you left anyway. But your
+                    parliament of teeth,enormous, protruding, thick and sharp
+                    ,have always been your allies.
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                            <p class="ability-text"> + 2</p>
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                            <p class="ability-text"> - 1</p>
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+                            <p class="ability-text"> - 1</p>
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(2d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d2): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d10): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+                <form>
+                    <label for="fanged-item">Item(d6): </label>
+                    <select id="fanged-item" name="fanged-item">
+                        <option value="1">1: Crumpled Monster Mask</option>
+                        <option value="2">2: The Brown Scimitar of Galgenbeck</option>
+                        <option value="3">3: Wizard Teeth</option>
+                        <option value="4">4: Old Sigurd's Sling</option>
+                        <option value="5">5: Ancient Gore-Hound</option>
+                        <option value="6">6: The Shoe of Death's Horse</option>
+                    </select>
+                </form>
+                <p class="description">
+                    Bite Attack: dr10 to attack, d6 damage. You must be close
+                    to your target. 1 to 2 on d6 chance the enemy gets a free attack.
+                </p>
+                <p class="description">
+                    Normal Agility tests are DR14 instead of DR12, excluding defense
+                </p>
+                <p class="description">
+                    Illiterate: you are incabable of understanding scrolls
+                </p>
+				<div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item">
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item">
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d10): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                            <option value="5">5: Warhammer</option>
+                            <option value="6">6: Sword</option>
+                            <option value="7">7: Bow</option>
+                            <option value="8">8: Flail</option>
+                            <option value="9">9: Crossbow</option>
+                            <option value="10">10: Zweih&auml;nder</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d4): </label>
+                        <select id="armor" name="armor">
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                            <option value="3">3: Medium Armor</option>
+                            <option value="4">4: Heavy Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <!--Gutterborn Scum-->
+            <div class="chosen-class hidden">
+                <p class="description">
+                    An ill star smiled upon your birth. Poverty, crime and bad
+                    parenting didn�t help either. In your community an honest day�s
+                    work was never an option. Not that you ever tried, what are you,
+                    some kind of mug? A razor blade and a moonless night are worth
+                    a week of chump-work.
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                            <p class="ability-text"> - 2</p>
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(1d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d2): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d6): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+                <form>
+                    <label for="fanged-item">Item(d6): </label>
+                    <select id="fanged-item" name="fanged-item">
+                        <option value="1">1: Crumpled Monster Mask</option>
+                        <option value="2">2: The Brown Scimitar of Galgenbeck</option>
+                        <option value="3">3: Wizard Teeth</option>
+                        <option value="4">4: Old Sigurd's Sling</option>
+                        <option value="5">5: Ancient Gore-Hound</option>
+                        <option value="6">6: The Shoe of Death's Horse</option>
+                    </select>
+                </form>
+                <p class="description">
+                    Bite Attack: dr10 to attack, d6 damage. You must be close
+                    to your target. 1 to 2 on d6 chance the enemy gets a free attack.
+                </p>
+				<div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item">
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item">
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d10): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                            <option value="5">5: Warhammer</option>
+                            <option value="6">6: Sword</option>
+                            <option value="7">7: Bow</option>
+                            <option value="8">8: Flail</option>
+                            <option value="9">9: Crossbow</option>
+                            <option value="10">10: Zweih&auml;nder</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d4): </label>
+                        <select id="armor" name="armor">
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                            <option value="3">3: Medium Armor</option>
+                            <option value="4">4: Heavy Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <!-- Esoteric Hermit -->
+			<div class="chosen-class hidden">
+                <p class="description">
+                    The stone of your cave is one with the stars. Silence and perfection.
+					Now the chaos of a fallen world disturbs your rituals and the caul of
+					night grows blacker than your cavern's gloom. Irritating!
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                            <p class="ability-text"> - 2</p>
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+							<p class="ability-text"> + 2</p>
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(1d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d4): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d4): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+				<!-- Class Abilities -->
+				<div class="content-body-one" id="power">
+					<form>
+						<label for="hermit-power">Choose One: </label>
+						<select id="hermit-power" name="hermit-power">
+							<option value="1">1: Master of Fate</option>
+							<option value="2">2: A Book of Boiling Blood</option>
+							<option value="3">3: Speaker of Truths</option>
+							<option value="4">4: Initiate of the Invisible College</option>
+							<option value="5">5: Bard of the Undying</option>
+							<option value="6">6: Hawk as weapon</option>
+						</select>
+					</form>
+					<!-- Abilities Descriptions -->
+					<p class="description" value="1">
+						What use are maps when the substance of causality itself is open to you?
+						you know the right way with a DR8 presence test.
+					</p>
+					<p class="description hidden" value="2">
+						You may open and read from this book once a day. Your enemy must make a 
+						DR12 test to prevent this. If they fail D2 Berserker-slayers appear from
+						the depths of a forgotten dimension of blood. Roll a d6, 1-4 these creatures
+						fight alongside you. 5-6 they turn on you, attempting to kill you and destroy
+						the book. After the battle they return to their imprisonment.
+					</p>
+					<p class="description hidden" value="3">
+						Twice per day use your wisdom, knowledge, advice and inner calm to bring clarity
+						to a creature of your choice. The DR of the next test they undertake is lowered by 4.
+					</p>
+					<p class="description hidden" value="4">
+						Once per day you may summon d2 scrolls, whose power can be used only once. Roll a d4,
+						1-2 the scrolls are sacred, 3-4 unclean. If the scrolls are not used before sunrise
+						they turn to ash.
+					</p>
+					<p class="description hidden" value="5">
+						You learnt you melodies in the otherworld. The music of your Harp gives +d4 on reaction
+						rolls.
+					</p>
+					<p class="description hidden" value="6">
+						Your crafty almost-intelligent hawk is loyal only to you. Even without shared langauge,
+						you understand its cries as it keeps watch, scouts and swoops to attack foes. Attacks/
+						defence DR10(claws/bite d4), HP 8.
+					</p>
+                </div>
+				<div class="content-body-one">
+					<form>
+						<label for="fanged-item">Random Scroll(d20): </label>
+						<select id="fanged-item" name="fanged-item">
+							<option value="1">1: Palms Open the Southern Gate</option>
+							<option value="2">2: Tongue of Eris</option>
+							<option value="3">3: TE-LE-KIN-ESIS</option>
+							<option value="4">4: Lucy-fires Levitation</option>
+							<option value="5">5: Daemon of Capillaries</option>
+							<option value="6">6: Nine Violet Signs Unknot the Storm</option>
+							<option value="7">7: Metzhoutl Blind Your Eye</option>
+							<option value="8">8: Foul Psychopomp</option>
+							<option value="9">9: Eylid Blinds the Mind</option>
+							<option value="10">10: Death</option>
+							<option value="11">11: Grace of a Dead Saint</option>
+							<option value="12">12: Grace for a Sinner</option>
+							<option value="13">13: Whispers Pass the Gate</option>
+							<option value="14">14: Aegis of Sorrow</option>
+							<option value="15">15: Unmet Fate</option>
+							<option value="16">16: Bestial Speech</option>
+							<option value="17">17: False Dawn/Night's Chariot</option>
+							<option value="18">18: Dermetic Step</option>
+							<option value="19">19: Roskoe's Consuming Glare</option>
+							<option value="20">20: Enochian Syntax</option>
+							
+						</select>
+					</form>
+				</div>
+				<div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item">
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item">
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d4): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d2): </label>
+                        <select id="armor" name="armor">
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+			<!-- Wretched Royalty -->
+            <div class="chosen-class hidden">
+                <p class="description">
+                    Bowed down only by the memories of your own lost glory,
+                    you could never submit to anyone else. Not you, of noble blood!
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(4d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d2): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d6): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Class Abilities -->
+                <div>Choose two abilities</div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="royal-power-one">Choose One: </label>
+                        <select id="royal-power-one" name="royal-power-one">
+                            <option value="1">1: The Blade of your Ancestors</option>
+                            <option value="2">2: Doltroon the Court Jester</option>
+                            <option value="3">3: Barbarister the Incredible horse</option>
+                            <option value="4">4: Hamfund the Equire</option>
+                            <option value="5">5: The Snake-Skin Gift</option>
+                            <option value="6">6: Worn of the Schleswig Lords</option>
+                        </select>
+
+                        <label for="royal-power-two">Choose One: </label>
+                        <select id="royal-power-two" name="royal-power-two">
+                            <option value="1">1: The Blade of your Ancestors</option>
+                            <option value="2">2: Doltroon the Court Jester</option>
+                            <option value="3">3: Barbarister the Incredible horse</option>
+                            <option value="4">4: Hamfund the Equire</option>
+                            <option value="5">5: The Snake-Skin Gift</option>
+                            <option value="6">6: Worn of the Schleswig Lords</option>
+                        </select>
+                    </form>
+                </div>
+                <!-- Abilities Descriptions -->
+                <p class="object description " value="1">
+                    This magnificent and clearly magical talking sword is foppish, unreliable
+                    and quietly despises you. It taunts your failures and , if continually disappointed,
+                    deleops a 1 in 6 chance to "accidentally" attack you or your companions. Deals d6 + 1
+                    damage. Attack/Defense DR10.
+                </p>
+                <p class="object description hidden" value="2">
+                    While practically useless, personally irritating and an emotional drain, Poltroon's
+                    capering actually makes enemies lose their focus in combat. For the first two rounds you
+                    and your allies get +2 on attack/defense.
+                </p>
+                <p class="object description hidden" value="3">
+                    Barbarister is magical, intelligent, arrogant and vain. He can also talk. If you can persuade
+                    him to care, Barbarister occasionally adds +2 to PResence tests involving logic and intellect.
+                    The horse may be smarter than you and is quite aware of this.
+                </p>
+                <p class="object description hidden" value="4">
+                    This intensely cowardly servant acts only as guardian for the scabbard of the cursed sword Eurekia.
+                    Once per combat, if Ham can be found, Eurekia may be drawn. The sword does 2d6 damage, and for every swing
+                    of Eurekia roll a d6. On a 1 the squire is slain and Eurekia vanishes forever.
+                </p>
+                <p class="object description hidden" value="5">
+                    An expensive sandalwood box bound in snakeskin. It contains a seemingly ordinary dagger, wrapped in silk. The
+                    dagger does d4 damage but on a 1 the targe dies immediately of deadly poison weeping from the blade.
+                </p>
+                <p class="object description hidden" value="6">
+                    Once per day release a blare from this dented old trumpet and test Presence DR12. One creature may make their
+                    next non-combat test an automatic success.
+                </p>
+                <!-- Need to implement js for matching descriptions with options chosen above -->
+
+                <div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item">
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item">
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d8): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                            <option value="5">5: Warhammer</option>
+                            <option value="6">6: Sword</option>
+                            <option value="7">7: Bow</option>
+                            <option value="8">8: Flail</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d3): </label>
+                        <select id="armor" name="armor">
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                            <option value="3">3: Medium Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+			<!-- Heretical Priest -->
+			<div class="chosen-class hidden">
+                <p class="description">
+                    Hunted by the Two-headed Basilisks of the One True Faith,
+					this heretic can be found raving in ruins, traipsing endlessly
+					down dusty roads and desecrating cathedrals by night.
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                            <p class="ability-text"> - 2</p>
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+							<p class="ability-text"> + 2</p>
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(3d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d4): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d8): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+				<!-- Class Abilities -->
+				<p class="description">
+                    May use powers while wearing medium armor.
+                </p>
+				<div class="content-body-one">
+					<form>
+						<label for="priest-power">Choose One: </label>
+						<select id="priest-power" name="priest-power">
+							<option value="1">1: Sacred shepherd's crook</option>
+							<option value="2">2: Stolen Mitre</option>
+							<option value="3">3: List of Sins</option>
+							<option value="4">4: The Blasphemous Nechrubel Bible</option>
+							<option value="5">5: Stones taken from Thel-Emas' Lost Temple</option>
+							<option value="6">6: (Wrong Jesus) Crucifix</option>
+							<!-- Need scroll labels -->
+						</select>
+					</form>
+					<!-- Abilities Descriptions -->
+					<p class="object description" value="1">
+						Its head a hook of human bone inscribed with overlapping anti-prayers. This crook hooks through other worlds.
+						Staff does 2d4 damage except to faithless humans.
+					</p>
+					<p class="object description hidden" value="2">
+						While wearing this holy hat the priest's vile body fades, becoming hard to hit in combat (defense DR10). If 
+						pulled over the ears outside of battle the priest becomes nearly invisible, testing stealth against DR8.
+					</p>
+					<p class="object description hidden" value="3">
+						A long and accuarte document cross-referenced against reality to discover unseen evil-doers. Successful
+						Presence DR10: A strange light surrounds evil creatures. The list's owner defends with +2 against any being
+						discovered this way.
+					</p>
+					<p class="object description hidden" value="4">
+						So intensely blasphemous even the Priests themselves can only peruse it once per day. When read, roll a die.
+						Even: For the rest of the day PCs heal d4 HP after just five minutes of rest.
+						Odd: The priest is plagued by demonic hallucinations. The DM may invent d3 things that only the Priest can see 
+						and describe them to the player as if true.
+						This effect ends with sunrise.
+					</p>
+					<p class="object description hidden" value="5">
+						Cast the stones on the ground. Their pattern reveals if danger lurks in an adjacent room. The stones can lie.
+						The priest tests Presence DR10 to see if they are true but after failing they cannot test again until the sun
+						has set.
+					</p>
+					<p class="object description hidden" value="6">
+						The crucifix can be used in encounters with the undead as well as lesser trolls and goblins. Check morale (add 
+						or subtact the priests's Presence modifier) to see if the creatures bow and kindly remove themselves.
+					</p>
+                </div>
+				<div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item">
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item">
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d8): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                            <option value="5">5: Warhammer</option>
+                            <option value="6">6: Sword</option>
+                            <option value="7">7: Bow</option>
+                            <option value="8">8: Flail</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d4): </label>
+                        <select id="armor" name="armor">
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                            <option value="3">3: Medium Armor</option>
+                            <option value="4">4: Heavy Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+			<!-- Occult Herbmaster -->
+			<div class="chosen-class hidden">
+                <p class="description">
+                    Born of the mushroom, raised in the glade.
+					watched by the eye of the moon in  a silverblack pool.
+                </p>
+                <div class="abilities">
+                    <div class="content-body-one">
+                        <form>
+                            <label for="strength">Strength(3d6): </label>
+                            <input type="number" id="strength" />
+                            <p class="ability-text"> - 2</p>
+                        </form>
+                        <form>
+                            <label for="agility">Agility(3d6): </label>
+                            <input type="number" id="agility" />
+                        </form>
+                    </div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="presence">Presence(3d6): </label>
+                            <input type="number" id="presence" />
+                        </form>
+                        <form>
+                            <label for="toughness">Toughness(3d6): </label>
+                            <input type="number" id="toughness" />
+							<p class="ability-text"> + 2</p>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class=" content-body-one">
+                        <form>
+                            <label for="silver">Silver(2d6): </label>
+                            <input type="number" id="silver" class=" SOP" />
+                            <p class="ability-text"> * 10</p>
+                        </form>
+                        <form>
+                            <label for="omens">Omens(d2): </label>
+                            <input type="number" id="omens" class=" SOP" />
+                        </form>
+                        <form>
+                            <label for="hp">Health Points(d6): </label>
+                            <input type="number" id="hp" class=" SOP" />
+                            <p class="ability-text"> + Toughness</p>
+                        </form>
+                    </div>
+                </div>
+				<!-- Class Abilities -->
+				<p class="description">
+                    You carry a portable laboratory and continually search for frequently expended ingredients.
+					Daily you have the materials to create two randomly determined decoctions and can brew a total
+					of d4 doses. If unused they lose vitality after 24 hours
+                </p>
+				<div class="content-body-one">
+					<form>
+						<label for="doses">Daily Doses(d4): </label>
+                        <input type="number" id="doses" />
+					</form>
+				</div>
+				<div class="content-body-one">
+                    <form>
+                        <label for="first-item">First Item(d12): </label>
+                        <select id="first-item" name="first-item">
+                            <option value="1">1: 30 ft Rope</option>
+                            <option value="2">2: Torches</option>
+                            <option value="3">3: Lantern with Oil</option>
+                            <option value="4">4: Magnesium Strip</option>
+                            <option value="5">5: Random unclean scroll</option>
+                            <option value="6">6: Sharp Needle</option>
+                            <option value="7">7: Medicine Chest</option>
+                            <option value="8">8: Metal File & Lockpicks</option>
+                            <option value="9">9: Bear Trap</option>
+                            <option value="10">10: Bomb</option>
+                            <option value="11">11: Bottle of Red Poison</option>
+                            <option value="12">12: Silver Crucifix</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="second-item">Second Item(d12): </label>
+                        <select id="second-item" name="second-item">
+                            <option value="1">1: Life Elixir</option>
+                            <option value="2">2: Sacred Scroll</option>
+                            <option value="3">3: Vicious Dog</option>
+                            <option value="4">4: Monkeys</option>
+                            <option value="5">5: Exquisite Perfume</option>
+                            <option value="6">6: Toolbox</option>
+                            <option value="7">7: 15 ft Heavy Chain</option>
+                            <option value="8">8: Grappling Hook</option>
+                            <option value="9">9: Shield</option>
+                            <option value="10">10: Crowbar</option>
+                            <option value="11">11: Lard</option>
+                            <option value="12">12: Tent</option>
+                            <!-- If scroll, we need to alter next options -->
+                        </select>
+                    </form>
+                </div>
+                <div class="content-body-one">
+                    <form>
+                        <label for="weapons">Weapons(d6): </label>
+                        <select id="weapons" name="weapons">
+                            <option value="1">1: Femur</option>
+                            <option value="2">2: Staff</option>
+                            <option value="3">3: Shortsword</option>
+                            <option value="4">4: Knife</option>
+                            <option value="5">5: Warhammer</option>
+                            <option value="6">6: Sword</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label for="armor">Armor(d2): </label>
+                        <select id="armor" name="armor">
+                            <option value="1">1: None</option>
+                            <option value="2">2: Light Armor</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+			<!-- description -->
+			<div id="description" class="content-body-one">
+				<div>
+					<form>
+						<label class="class-img" for="img">Custom Character Image:</label>
+						<input type="text" id="img" name="img" placeholder="Enter Image Web Link" />
+                    </form>
+					<form>
+						<label class="class-description" for="description">Character Description:</label>
+						<textarea type="text" id="description" name="description" placeholder="Enter Description"></textarea>
+                    </form>
+				</div>
+			</div>
+			<div id="create-button">
+                <a href="">Create</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: 'OCR A', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 10; /* Keeps it above other content */
+    top: 0;
+}
+
+#site-title {
+    margin-left: 30px
+}
+
+.error-container {
+    text-align: center;
+}
+.error-container h1 {
+    font-size: 128px;
+    color: white;
+    margin-bottom: 16px;
+}
+.error-container p {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 32px;
+}
+.home-link {
+    text-decoration: none;
+    background-color: yellow;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 19px;
+    transition: background-color 0.3s ease; /*allows original color to fade into hover color*/
+}
+.home-link:hover {
+    background-color: white;
+}
