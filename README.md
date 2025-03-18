@@ -10,6 +10,5 @@ Here you can click on characters you made to see more detail and delete them.
 ![image](https://github.com/user-attachments/assets/f688d23f-e56c-44f5-aea9-b9852086d460)
 ### Character Creation
 Allows for braod creation of characters using the Mork Borg system
-![image](https://github.com/user-attachments/assets/4b21ad62-fff8-494a-9eeb-f05a05fc2134)
 
 Made in collaboration with Lucas Felds, Mitchell Bourdukofsky, and Alexander Addis
